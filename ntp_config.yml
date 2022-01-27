@@ -2,7 +2,6 @@
 - name: "PLAY 1: Manage NTP config"
   hosts: "all"
   tasks:
-
     - name: "TASK 0: Validate NTP server IP addresses"
       assert:
         that:
@@ -19,7 +18,7 @@
           - "ntp logging"
           - "ntp server {{ ntp_server1 }}"
           - "ntp server {{ ntp_server2 }}"
-          
+
     - name: "TASK 2: Print changes if NTP config changed"
       debug:
         var: "ntp_updates.updates"
